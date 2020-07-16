@@ -2,7 +2,7 @@ from typing import List
 
 from vectors import Vector
 
-def subtract(vectors: List[Vector]) -> Vector:
+def vector_sum(vectors: List[Vector]) -> Vector:
     assert vectors, "no vectors provided!"
 
     num_elements = len(vectors[0])
