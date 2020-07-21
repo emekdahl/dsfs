@@ -63,3 +63,23 @@ def data_range(xs: List[float]) -> float:
     return max(xs) - min(xs)
 
 assert data_range(num_friends) == 99
+
+
+# Variance
+
+import linear_algebra.sum_of_squares as sum_of_squares
+
+def de_mean(xs: List[float]) -> List[float]:
+    """Translate xs by subtracting its mean (so the result has mean 0)"""
+    x_bar = mean(xs)
+    return [x - x_bar for x in xs]
+
+def variance(xs: List[float]) -> float:
+    """Almost the average squared deviation from the mean"""
+    assert len(xs) >= 2, "variance requires at least 2 elements"
+
+    n = len(xs)
+    deviations = de_mean(xs)
+    return sum_of_squares(deviations) / (n - 1)
+
+assert 81.54 < variance(num_friends) < 81.55
