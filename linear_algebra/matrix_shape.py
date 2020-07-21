@@ -22,4 +22,9 @@ def shape(A: Matrix) -> Tuple[int, int]:
 def get_row(A: Matrix, i: int) -> Vector:
     return A[i]
 
-    assert get_row([[1,2,3], [4, 5, 6]], 0) == ([1,4])
+    assert get_row([[1,2,3], [4, 5, 6]], 0) == ([1,2,3])
+
+def get_column(A: Matrix, i: int) -> Vector:
+    return A[i]
+
+    assert get_column([[1,2,3], [4, 5, 6]], 0) == ([1,4])
