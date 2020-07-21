@@ -39,4 +39,4 @@ def median(v: List[float]) -> float:
 assert median([1, 10, 2, 9, 5]) == 5
 assert median([1, 9, 2, 10]) == (2 + 9) / 2
 
-
+print(median(num_friends))
