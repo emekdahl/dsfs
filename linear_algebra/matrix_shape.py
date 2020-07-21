@@ -1,4 +1,5 @@
 from typing import List, Tuple
+from vectors import Vector
 
 Matrix = List[List[float]]
 
@@ -16,3 +17,9 @@ def shape(A: Matrix) -> Tuple[int, int]:
     return num_rows, num_cols
 
     assert shape([[1,2,3], [4, 5, 6]]) == (2,3)
+
+
+def get_row(A: Matrix, i: int) -> Vector:
+    return A[i]
+
+    assert get_row([[1,2,3], [4, 5, 6]], 0) == ([1,4])
