@@ -56,3 +56,10 @@ def mode(x: List[float]) -> List[float]:
                 if count == max_count]
 
 assert set(mode(num_friends)) == {1,6}
+
+# Dispersion
+
+def data_range(xs: List[float]) -> float:
+    return max(xs) - min(xs)
+
+assert data_range(num_friends) == 99
