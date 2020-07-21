@@ -15,3 +15,13 @@ plt.title("Histogram of Friend Counts")
 plt.xlabel("# of friends")
 plt.ylabel("# of people")
 plt.show()
+
+num_points = len(num_friends)
+
+largest_value = max(num_friends)
+smallest_value = min(num_friends)
+
+sorted_values = sorted(num_friends)
+smallest_value = sorted_values[0]
+second_smallest_value = sorted_values[1]
+second_largest_value = sorted_values[-2]
