@@ -1,6 +1,15 @@
 import math
 from collections import Counter
 from typing import List
+import os, sys
+
+#Following lines are for assigning parent directory dynamically.
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+parent_dir_path = os.path.abspath(os.path.join(dir_path, os.pardir))
+
+sys.path.insert(0, parent_dir_path)
 
 import matplotlib.pyplot as plt
 
@@ -82,8 +91,7 @@ assert data_range(num_friends) == 99
 
 # Variance
 
-import linear_algebra.sum_of_squares as sum_of_squares
-
+from linear_algebra.sum_of_squares import sum_of_squares as sum_of_squares
 
 def de_mean(xs: List[float]) -> List[float]:
     """Translate xs by subtracting its mean (so the result has mean 0)"""
@@ -109,3 +117,10 @@ def standard_deviation(xs: List[float]) -> float:
 
 
 assert 9.02 < standard_deviation(num_friends) < 9.04
+
+
+def interquartile_range(xs: List[float]) -> float:
+    """Returns the difference between the 75%-ile and the 25%-ile"""
+    return quantile(xs, 0.75) - quantile(xs, 0.25)
+
+assert interquartile_range(num_friends) == 6
